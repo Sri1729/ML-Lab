@@ -1,0 +1,28 @@
+import numpy as np
+import pandas as pd
+import matplotlib as plt
+data = pd.read_csv("E:\ML-Lab-main\Datasets\Titanic.csv")
+# view some rows
+# head -> top 5
+data.head()
+# tail -> last 5
+data.tail()
+# view cols and data types
+data.info()
+# rows * cols
+data.shape
+# check the summary statistics of the dataframe
+data.describe()
+# check the count of unique values in the target column
+data['Survived'].value_counts()
+# cols
+data.columns
+data.nunique()
+data['Survived'].unique()
+data['Pclass'].unique()
+data['Sex'].unique()
+data.isnull().sum()
+data = data.drop(['Cabin','Embarked'],axis=1)
+data.columns
+data['Age'].fillna(data['Age'].mean(), inplace=True)
+data.isnull().sum()
